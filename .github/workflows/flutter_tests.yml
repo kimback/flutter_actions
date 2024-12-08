@@ -33,7 +33,7 @@ jobs:
 
     - name: Install dependencies # Flutter 프로젝트의 종속성 설치
       run: |
-        cd my_appppp \n
+        cd my_appppp
         flutter pub get # pubspec.yaml에 정의된 패키지 설치
 
     - name: Run unit tests # 단위 테스트 실행
