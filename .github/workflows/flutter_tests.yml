@@ -10,9 +10,9 @@ jobs:
   test: # 테스트 작업 정의
     runs-on: ubuntu-latest # Ubuntu 최신 버전에서 실행
 
-    strategy:
-      matrix: # 매트릭스를 사용하여 여러 환경에서 테스트 실행
-        flutter-version: ['3.0.0'] # 두 가지 Flutter 버전에서 테스트 실행
+#    strategy:
+#      matrix: # 매트릭스를 사용하여 여러 환경에서 테스트 실행
+#        flutter-version: ['3.0.0'] # 두 가지 Flutter 버전에서 테스트 실행
 
     steps:
     - name: Checkout repository # 현재 리포지토리 코드 체크아웃
@@ -20,8 +20,8 @@ jobs:
 
     - name: Set up Flutter # Flutter 환경 설정
       uses: subosito/flutter-action@v2 # Flutter 설치 액션
-      with:
-        flutter-version: ${{ matrix.flutter-version }} # 매트릭스에서 지정한 Flutter 버전을 설정
+      #with:
+      #  flutter-version: ${{ matrix.flutter-version }} # 매트릭스에서 지정한 Flutter 버전을 설정
 
     - name: Cache dependencies # 종속성 캐싱
       uses: actions/cache@v3 # GitHub Actions 기본 제공 캐싱 액션 사용
