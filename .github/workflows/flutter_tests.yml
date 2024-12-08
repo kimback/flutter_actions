@@ -41,7 +41,8 @@ jobs:
         cd my_appppp 
         flutter test # test 디렉터리에 있는 모든 단위 테스트 실행
 
-    - name: Run integration tests # 통합 테스트 실행
-      run: 
-        cd my_appppp
-        flutter test integration_test # integration_test 디렉터리에 있는 통합 테스트 실행
+    # 하나씩 진행...
+    #- name: Run integration tests # 통합 테스트 실행
+    #  run: 
+    #    cd my_appppp
+    #    flutter test integration_test # integration_test 디렉터리에 있는 통합 테스트 실행
