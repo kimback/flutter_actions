@@ -32,12 +32,12 @@ jobs:
           ${{ runner.os }}-pub-cache # 캐시 복원 키
 
     - name: Install dependencies # Flutter 프로젝트의 종속성 설치
-      run: 
-        cd my_appppp
+      run: |
+        cd my_appppp \n
         flutter pub get # pubspec.yaml에 정의된 패키지 설치
 
     - name: Run unit tests # 단위 테스트 실행
-      run:
+      run: |
         cd my_appppp 
         flutter test # test 디렉터리에 있는 모든 단위 테스트 실행
 
