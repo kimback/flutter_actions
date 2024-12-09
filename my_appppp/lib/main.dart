@@ -72,7 +72,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ),
             if (_result != null)
               Text(
-                'Result: $_result',
+                '$_result',
                 style: TextStyle(fontSize: 24),
               ),
           ],
