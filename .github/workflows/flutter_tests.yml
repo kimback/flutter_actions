@@ -36,6 +36,13 @@ jobs:
       run: |
         curl -sL https://firebase.tools | bash
 
+     # 4. Firebase CLI 인증 테스트
+    - name: Verify Firebase Authentication
+      env:
+        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+      run: firebase projects:list
+      
+
     - name: Install dependencies # Flutter 프로젝트의 종속성 설치
       run: |
         cd my_appppp
