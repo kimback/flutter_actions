@@ -40,8 +40,9 @@ jobs:
     - name: Verify Firebase Authentication
       env:
         FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
-      run: firebase projects:list
+      run: firebase projects:list --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
       
+
 
     - name: Install dependencies # Flutter 프로젝트의 종속성 설치
       run: |
