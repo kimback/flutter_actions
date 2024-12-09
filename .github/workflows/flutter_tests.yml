@@ -70,3 +70,4 @@ jobs:
         firebase appdistribution:distribute build/app/outputs/flutter-apk/app-debug.apk \
           --app "1:104783052197:android:0f4dc3f4cb6473d86d3c4c" \
           --groups "testers"
+          --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
