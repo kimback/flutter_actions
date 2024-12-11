@@ -33,16 +33,16 @@ jobs:
 
     
     # 배포때 사용
-    # 4. Firebase CLI 설치
-    # - name: Install Firebase CLI
-    #   run: |
-    #     curl -sL https://firebase.tools | bash
+    #4. Firebase CLI 설치
+    - name: Install Firebase CLI
+      run: |
+        curl -sL https://firebase.tools | bash
 
-    #  # 4. Firebase CLI 인증 테스트
-    # - name: Verify Firebase Authentication
-    #   env:
-    #     FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
-    #   run: firebase projects:list --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
+     # 4. Firebase CLI 인증 테스트
+    - name: Verify Firebase Authentication
+      env:
+        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+      run: firebase projects:list --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
       
 
     # Flutter 프로젝트의 종속성 설치
@@ -65,22 +65,23 @@ jobs:
 
 
     # 배포할때 실행
-    # - name: build...
-    #   run: | 
-    #     cd my_appppp
-    #     flutter build apk --debug
+    - name: build...
+      run: | 
+        cd my_appppp
+        flutter build apk --debug
+
+
+
 
     # # 9. Firebase App Distribution 배포
-    # - name: Deploy to Firebase App Distribution
-    #   env:
-    #     FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
-    #   run: |
-    #     cd my_appppp
-    #     firebase appdistribution:distribute build/app/outputs/flutter-apk/app-debug.apk \
-    #       --app "1:104783052197:android:0f4dc3f4cb6473d86d3c4c" \
-    #       --groups "testers" \
-    #       --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
-
-
+    - name: Deploy to Firebase App Distribution
+      env:
+        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
+      run: |
+        cd my_appppp
+        firebase appdistribution:distribute build/app/outputs/flutter-apk/app-debug.apk \
+          --app "1:104783052197:android:0f4dc3f4cb6473d86d3c4c" \
+          --groups "testers" \
+          --token="${{ secrets.FIREBASE_AUTH_TOKEN }}"
 
     #123123
